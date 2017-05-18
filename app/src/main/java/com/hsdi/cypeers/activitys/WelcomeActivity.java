@@ -23,7 +23,7 @@ import android.widget.LinearLayout;
 import com.hsdi.cypeers.R;
 
 public class WelcomeActivity extends Activity {
-    private final static String TAG = "WelcomeActivity_eva";
+    private final static String TAG = "WelcomeActivity_Eva";
     private ImageView welcomeImage;
     private Thread waitThread;
     private int pageNumber = 1;

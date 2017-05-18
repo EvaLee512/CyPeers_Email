@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">CyPeers</string>
+    <string name="login_username_label">UserName</string>
+    <string name="login_password_label">Password</string>
+    <string name="login_username_hint">UserName</string>
+    <string name="login_password_hint">text Password</string>
+    <string name="textview_remember">Remember Me</string>
+    <string name="textview_forget_password">Forgot your Username Or Password</string>
 </resources>
