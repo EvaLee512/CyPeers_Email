@@ -139,7 +139,9 @@ public class LoginActivity extends AppCompatActivity implements CompoundButton.O
     @Override
     protected void onActivityResult(int requestCode, int resultCode, Intent data) {
         super.onActivityResult(requestCode, resultCode, data);
-        eText_login_email.setText(data.getExtras().get("User_Name").toString());
+        if(data != null){
+            eText_login_email.setText(data.getExtras().get("User_Name").toString());
+        }
     }
 
     @Override
