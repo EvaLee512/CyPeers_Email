@@ -1,9 +1,28 @@
 <resources>
+
+    <!--Login Activity information-->
     <string name="app_name">CyPeers</string>
     <string name="login_username_label">UserName</string>
     <string name="login_password_label">Password</string>
-    <string name="login_username_hint">UserName</string>
+    <string name="login_username_hint">Email address</string>
     <string name="login_password_hint">text Password</string>
     <string name="textview_remember">Remember Me</string>
     <string name="textview_forget_password">Forgot your Username Or Password</string>
+    <!--Register Activity information-->
+    <string name="register_nickname_label">Nick Nmae</string>
+    <string name="register_username_label">User Name</string>
+    <string name="register_email_label">Email address</string>
+    <string name="register_password_label">Password</string>
+    <string name="signup_label">SIGN UP</string>
+
+    <!--Register Activity information show the prompt meesage to user-->
+    <string name="register_success_label">"Register Success please go to your email to activate your account!"</string>
+    <string name="register_unauthorized_client_label">"Register Fail unauthorized client"</string>
+    <string name="register_email_duplicate_label">"Register Fail Email had been register!</string>
+    <string name="register_register_fail_label">"Register Fail Unknow error</string>
+    <string name="register_params_error_label">"Register Fail parameters error</string>
+    <string name="register_user_not_found_label">"Register Fail user not found</string>
+    <string name="register_activate_code_not_found_label">"Register Fail activate code not found</string>
+    <string name="register_activated_label">"Your account had been activated!"</string>
+    <string name="register_Server_fail_label">"Server Internal Error"</string>
 </resources>

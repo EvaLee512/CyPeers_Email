@@ -24,7 +24,7 @@
         android:text="@string/login_username_label"/>
 
     <EditText
-        android:id="@+id/edit_username"
+        android:id="@+id/edit_email"
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:hint="@string/login_username_hint"
@@ -36,7 +36,7 @@
         android:id="@+id/login_password_input"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@id/edit_username"
+        android:layout_below="@id/edit_email"
         android:layout_marginTop="3dp"
         android:text="@string/login_password_label"/>
     <EditText
@@ -56,12 +56,11 @@
         android:layout_marginTop="4dp"
         android:padding="5dp">
 
-        <Button
+        <CheckBox
             android:id="@+id/btn_remember"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:background="@drawable/btn_rembme_up"
-            android:onClick="loginActivityClick"
+            android:layout_height="25dp"
+            android:enabled="true"
             android:layout_marginRight="5dp"/>
         <TextView
             android:id="@+id/textview_remember"

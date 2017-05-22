@@ -1,6 +1,6 @@
 package com.hsdi.cypeers.activitys;
 
-import android.app.ActionBar;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -63,7 +63,9 @@ public class LoginActivity extends AppCompatActivity{
                 break;
 
             case R.id.btn_register:
-                Log.i(TAG,"loginActivityClick-->btn_register");
+                Intent intent = new Intent(LoginActivity.this, RegisterActivity.class);
+                LoginActivity.this.startActivityForResult(intent, 1001);
+                Log.i(TAG, "loginActivityClick-->btn_register");
 
                 break;
 
