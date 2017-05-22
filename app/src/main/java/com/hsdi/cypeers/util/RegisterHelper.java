@@ -1,12 +1,9 @@
 package com.hsdi.cypeers.util;
 
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.ContextWrapper;
-import android.content.DialogInterface;
-import android.os.Handler;
 
 import com.hsdi.cypeers.R;
+import com.hsdi.cypeers.interfaces.PostFinishListener;
+import com.hsdi.cypeers.interfaces.RegisterListener;
 
 import org.json.JSONObject;
 
@@ -16,18 +13,13 @@ import java.util.Map;
 /**
  * Created by EvaLee on 2017/5/19.
  */
-public class RegisterHelper implements HttpUtil.PostFinishListener {
+public class RegisterHelper implements PostFinishListener {
 
     private RegisterListener mListener;
 
     public RegisterHelper(RegisterListener listener)
     {
         mListener=listener;
-    }
-
-    public interface RegisterListener {
-        void onRegisterFinish(boolean isSuccess,String message);
-        void onRegisterFinish(boolean isSuccess,int message_id);
     }
 
     public void doRegister(String nick_name,String user_name,String email,String password){

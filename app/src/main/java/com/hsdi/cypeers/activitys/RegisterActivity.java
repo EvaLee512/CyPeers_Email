@@ -1,8 +1,5 @@
 package com.hsdi.cypeers.activitys;
 
-import android.app.AlertDialog;
-import android.content.DialogInterface;
-import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.Nullable;
@@ -13,6 +10,8 @@ import android.widget.Button;
 import android.widget.EditText;
 
 import com.hsdi.cypeers.R;
+import com.hsdi.cypeers.interfaces.RegisterListener;
+import com.hsdi.cypeers.util.DialogUtil;
 import com.hsdi.cypeers.util.HttpUtil;
 import com.hsdi.cypeers.util.RegisterHelper;
 import com.hsdi.cypeers.util.ToastUtil;
@@ -21,7 +20,7 @@ import com.hsdi.cypeers.util.ToastUtil;
 /**
  * Created by EvaLee on 2017/5/18.
  */
-public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, RegisterHelper.RegisterListener {
+public class RegisterActivity extends AppCompatActivity implements View.OnClickListener, RegisterListener {
 
     private static final String TAG = "LoginActivity_Eva";
     private EditText eText_register_nickname;
@@ -40,7 +39,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
     private RegisterHelper mHelper;
     private Handler mHandler;
 
-    private boolean isRegisterSuccess = false;
+    public static boolean isRegisterSuccess = false;
 
 
     @Override
@@ -60,6 +59,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
         btn_signup.setOnClickListener(this);
 
         mHttpUtil = new HttpUtil();
+        DialogUtil.init();
     }
 
     @Override
@@ -100,40 +100,12 @@ public class RegisterActivity extends AppCompatActivity implements View.OnClickL
 
     @Override
     public void onRegisterFinish(boolean isSuccess, String msg) {
-        if (isSuccess) {
-            showMsgDialog(msg);
-        } else {
-            showMsgDialog(msg);
-        }
+            DialogUtil.showMsgDialog(RegisterActivity.this,msg,register_email);
     }
 
     @Override
     public void onRegisterFinish(boolean isSuccess, int error_id) {
         isRegisterSuccess = isSuccess;
         onRegisterFinish(isSuccess, getResources().getString(error_id));
-    }
-
-    public void showMsgDialog(final String msg) {
-        mHandler.post(new Runnable() {
-            @Override
-            public void run() {
-                AlertDialog.Builder builder = new AlertDialog.Builder(RegisterActivity.this);
-                builder.setMessage(msg);
-                builder.setTitle("Prompt Dialog");
-                builder.setPositiveButton("OK", new DialogInterface.OnClickListener() {
-                    @Override
-                    public void onClick(DialogInterface dialog, int which) {
-                        if (isRegisterSuccess) {
-                            Intent result = new Intent();
-                            result.putExtra("User_Name", register_email);
-                            RegisterActivity.this.setResult(1001, result);
-                            RegisterActivity.this.finish();
-                        }
-                        dialog.dismiss();
-                    }
-                });
-                builder.create().show();
-            }
-        });
     }
 }

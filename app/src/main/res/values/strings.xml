@@ -25,4 +25,17 @@
     <string name="register_activate_code_not_found_label">"Register Fail activate code not found</string>
     <string name="register_activated_label">"Your account had been activated!"</string>
     <string name="register_Server_fail_label">"Server Internal Error"</string>
+
+    <!--Login Activity information show the prompt meesage to user-->
+    <string name="login_success_label">"Welcome!"</string>
+    <string name="login_unauthorized_client_label">"Login Fail unauthorized client"</string>
+    <string name="login_email_duplicate_label">"Login Fail Email had been register!</string>
+    <string name="login_fail_label">"Login Fail Unknow error</string>
+    <string name="login_params_error_label">"Login Fail parameters error</string>
+    <string name="login_user_not_found_label">"Login Fail user not found</string>
+    <string name="login_activate_code_not_found_label">"Login Fail activate code not found</string>
+    <string name="login_activated_label">"Your account had been activated!"</string>
+    <string name="login_not_activated_label">"Login Fail Your account didn't activate</string>
+    <string name="login_offline_label">"Please check your network"</string>
+
 </resources>

@@ -1,22 +1,15 @@
 package com.hsdi.cypeers.util;
 
-import android.app.Activity;
-import android.app.AlertDialog;
-import android.content.Context;
-import android.content.DialogInterface;
-import android.content.Intent;
-import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 
+import com.hsdi.cypeers.interfaces.PostFinishListener;
 import com.squareup.okhttp.FormEncodingBuilder;
 import com.squareup.okhttp.OkHttpClient;
 import com.squareup.okhttp.Request;
 import com.squareup.okhttp.RequestBody;
 import com.squareup.okhttp.Response;
-
 import org.json.JSONObject;
-
 import java.util.Map;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -47,10 +40,6 @@ public class HttpUtil extends AppCompatActivity{
 
 
     private static final ExecutorService threadPool= Executors.newFixedThreadPool(5);
-
-    public interface PostFinishListener{
-        void onFinish(boolean isSuccessful, JSONObject result,int request_code);
-    }
 
     //OkHttp 请求接口
     public static void doPost(String url, String[] keys, Map<String,String> keyValues, final PostFinishListener listener,final int request_code){
