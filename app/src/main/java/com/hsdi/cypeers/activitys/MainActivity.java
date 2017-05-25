@@ -29,6 +29,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 import com.hsdi.cypeers.util.AccountType;
+import com.hsdi.cypeers.util.ToastUtil;
 
 
 /**
@@ -87,6 +88,18 @@ private static final int START_ACTIVITY_CODE_LOGINTOREGISTER = 0001;
                 String account_name = getObject.getAccountName();    //获取信息标题
                 //Toast显示测试
                 Log.i(TAG,"setOnItemClickListener--->infoId = "+infoId+" infoTitle = "+infoTitle+" account_name = "+account_name);
+
+                TextView  tv_account_name;
+                String accountName = "";
+                if(0 !=1){
+                    tv_account_name = (TextView)   mViewMapping.get(infoTitle).findViewById(R.id.account_name);
+                    accountName = tv_account_name.getText().toString();
+                    if(!accountName.equals("")){
+                        Log.i(TAG,"accountName = "+accountName);
+                        ToastUtil.makeToast(MainActivity.this,"Now You Can Write Your Email!");
+                        return;
+                    }
+                }
                 switch (infoId){
                     case GMAIL_ACCOUNT:
 
@@ -187,11 +200,6 @@ private static final int START_ACTIVITY_CODE_LOGINTOREGISTER = 0001;
             tv_account_name = (TextView)   mViewMapping.get(data.getExtras().get("account_type").toString()).findViewById(R.id.account_name);
             if(tv_account_name != null){
                 tv_account_name.setText(data.getExtras().get("email").toString());
-                Log.i("MainActivity_Eva","email = "+data.getExtras().get("email").toString());
-
-                AccountType accountType = new AccountType();
-                tv_account_name.setText(data.getExtras().get("email").toString());    //填入相应的值
-                Log.i(TAG,"tv_account_name = "+tv_account_name.getText().toString());
             }
         }
     }
