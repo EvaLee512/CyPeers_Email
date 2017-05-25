@@ -1,6 +1,8 @@
 package com.hsdi.cypeers.activitys;
 
 import android.content.Intent;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -116,6 +118,13 @@ public class LoginActivity extends AppCompatActivity implements CompoundButton.O
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             intent.putExtra("user_name",login_email);
             intent.putExtra("user_pwd",login_password);
+
+            //保存当前用户的token到sharePreference
+            SharedPreferences sharedPreferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
+            SharedPreferences.Editor editor = sharedPreferences.edit();
+            editor.putString("token",LoginHelper.TOKEN);
+            editor.commit();
+
             LoginActivity.this.startActivity(intent);
         }else {
             DialogUtil.showMsgDialog(LoginActivity.this,message,"");

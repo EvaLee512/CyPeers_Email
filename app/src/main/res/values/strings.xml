@@ -38,4 +38,13 @@
     <string name="login_not_activated_label">"Login Fail Your account didn't activate</string>
     <string name="login_offline_label">"Please check your network"</string>
 
+
+    <!--MainActivity -->
+    <string name="add_account_label">"Add Account"</string>
+    <string name="menu_loginout">"LoginOut"</string>
+    <string name="loginout_message">"Do you really want to Login Out?"</string>
+    <string name="loginout_fail">"Login Out fail"</string>
+    <string name="loginout_success">"Login Out Successful"</string>
+
+
 </resources>

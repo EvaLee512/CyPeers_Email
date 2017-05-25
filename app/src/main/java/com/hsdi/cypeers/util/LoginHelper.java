@@ -1,5 +1,6 @@
 package com.hsdi.cypeers.util;
 
+import android.content.SharedPreferences;
 import android.util.Log;
 import com.hsdi.cypeers.R;
 import com.hsdi.cypeers.interfaces.LoginListener;
@@ -14,6 +15,7 @@ import java.util.Map;
 public class LoginHelper implements PostFinishListener{
     private LoginListener mListener;
     private static final String TAG = "LoginHelper_Eva";
+    public static String TOKEN = "";
 
     public LoginHelper(LoginListener listener){
         mListener = listener;
@@ -39,8 +41,11 @@ public class LoginHelper implements PostFinishListener{
 
         int _result_code=-1;
 
+
         try{
             _result_code = Integer.parseInt(result.getString("result_code"));
+            TOKEN = result.getString("token");
+            Log.i(TAG,"onFinish->TOKEN = "+TOKEN);
         }
         catch(Exception e){
             mListener.onLoginFinish(false,R.string.login_fail_label);

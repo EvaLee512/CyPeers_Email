@@ -31,10 +31,12 @@ public class HttpUtil extends AppCompatActivity{
     public final static int NOT_ACTIVATED = 1009;
     public final static int OFFLINE = 1010;
 
-    public final static String STR_REGISTER_URL = "http://192.168.0.123:3333/restful_api/register/register_by_mail";
+    public final static String STR_REGISTER_URL = "http://192.168.0.130:3333/restful_api/register/register_by_mail";
     public static final int REGISTER_REQUEST_CODE = 101010;
-    public final static String STR_LOGIN_URL = "http://192.168.0.123:3333/restful_api/login/do_login";
+    public final static String STR_LOGIN_URL = "http://192.168.0.130:3333/restful_api/login/do_login";
     public static final int LOGIN_REQUEST_CODE = 121212;
+    public final static String STR_LOGIN_OUT_URL = "http://192.168.0.130:3333/restful_api/login/do_logout";
+    public static final int LOGIN_OUT_REQUEST_CODE = 131313;
 
 
 
