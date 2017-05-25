@@ -34,7 +34,8 @@
             android:theme="@style/AppTheme">
         </activity>
 
-
+        <activity android:name="com.hsdi.cypeers.activitys.AccountLoginActivity">
+        </activity>
     </application>
 
 </manifest>

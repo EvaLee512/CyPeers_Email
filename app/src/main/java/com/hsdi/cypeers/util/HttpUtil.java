@@ -39,6 +39,9 @@ public class HttpUtil extends AppCompatActivity{
     public static final int LOGIN_OUT_REQUEST_CODE = 131313;
 
 
+    public final static String STR_ADD_ACCOUNT_URL = "http://192.168.0.123:3333/restful_api/mailbox/do_add";
+    public static final int ADD_ACCOUNT_REQUEST_CODE = 141414;
+
 
 
     private static final ExecutorService threadPool= Executors.newFixedThreadPool(5);

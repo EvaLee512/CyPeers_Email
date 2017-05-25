@@ -15,7 +15,7 @@ import java.util.Map;
 public class LoginHelper implements PostFinishListener{
     private LoginListener mListener;
     private static final String TAG = "LoginHelper_Eva";
-    public static String TOKEN = "";
+    public String login_token = "";
 
     public LoginHelper(LoginListener listener){
         mListener = listener;
@@ -44,8 +44,8 @@ public class LoginHelper implements PostFinishListener{
 
         try{
             _result_code = Integer.parseInt(result.getString("result_code"));
-            TOKEN = result.getString("token");
-            Log.i(TAG,"onFinish->TOKEN = "+TOKEN);
+            login_token = result.getString("token");
+            Log.i(TAG,"onFinish->login_token = "+login_token);
         }
         catch(Exception e){
             mListener.onLoginFinish(false,R.string.login_fail_label);
@@ -54,7 +54,7 @@ public class LoginHelper implements PostFinishListener{
 Log.i(TAG,"onFinish ->_result_code = "+_result_code);
         switch (_result_code){
             case HttpUtil.SUCCESS:
-                mListener.onLoginFinish(true,R.string.login_success_label);
+                mListener.onLoginFinish(true,login_token);
                 break;
 
             case HttpUtil.UNAUTHORIZED_CLIENT://1002

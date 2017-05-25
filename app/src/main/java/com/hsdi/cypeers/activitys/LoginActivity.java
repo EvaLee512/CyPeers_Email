@@ -115,14 +115,15 @@ public class LoginActivity extends AppCompatActivity implements CompoundButton.O
     public void onLoginFinish(boolean isSuccess, String message) {
         if(isSuccess){
             isLoginSuccess = isSuccess;
+            String login_token = message;
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
             intent.putExtra("user_name",login_email);
             intent.putExtra("user_pwd",login_password);
 
-            //保存当前用户的token到sharePreference
+            //???????token?sharePreference
             SharedPreferences sharedPreferences = getSharedPreferences(getPackageName(), Context.MODE_PRIVATE);
             SharedPreferences.Editor editor = sharedPreferences.edit();
-            editor.putString("token",LoginHelper.TOKEN);
+            editor.putString("token",login_token);
             editor.commit();
 
             LoginActivity.this.startActivity(intent);
