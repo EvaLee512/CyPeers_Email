@@ -46,5 +46,18 @@
     <string name="loginout_fail">"Login Out fail"</string>
     <string name="loginout_success">"Login Out Successful"</string>
 
+    <string name="tv_add_account">Add Account</string>
+    <string name="google_account">gmail</string>
+    <string name="wangyi_account">163</string>
+    <string name="yahoo_account">yahoo</string>
+    <string name="exchange_account">exchange</string>
+    <string name="outlook_account">outLook</string>
+    <string name="others_account">others</string>
+
+    <string name="account_login">Login in</string>
+    <string name="account_login_cancel">Cancel</string>
+
+    <string name="login_gmail_username_hint">UserName</string>
+
 
 </resources>

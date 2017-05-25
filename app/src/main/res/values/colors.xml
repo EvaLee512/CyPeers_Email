@@ -8,4 +8,7 @@
     <color name="colorRegisterbg">#FF878B77</color>
     <color name="colorSignupBtn">#FF3776CE</color>
     <color name="colorSignup_Text">#FFFDFDFD</color>
+
+    <color name="tv_add_account_bg">#FFE7E6E6</color>
+    <color name="add_account_blank_bg">#FFFAFAFA</color>
 </resources>
